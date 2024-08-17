@@ -35,15 +35,39 @@ object _1fexd : DependencyGroup(group = "com.github.1fexd") {
             val compose = module("compose")
         }
 
-        val uiKit = UiKit
+        val lifecycleUtil = LifecycleUtil
 
-        object UiKit : DependencyNotationAndGroup(
-            group = "$group.compose-ui-kit",
-            name = "compose-ui-kit"
+        object LifecycleUtil : DependencyNotationAndGroup(
+            group = "$group.android-lifecycle-util",
+            name = "android-lifecycle-util"
         ) {
-            val components = module("components")
-            val util = module("util")
+            val core = module("core")
+            val koin = module("koin")
         }
+    }
+
+    val composeKit = ComposeKit
+
+    object ComposeKit : DependencyNotationAndGroup(
+        group = "$group.composekit",
+        name = "composekit"
+    ) {
+        val app = App
+
+        object App : IsNotADependency {
+            val core = DependencyNotation(group = group, name = "app-core")
+        }
+
+        val theme = Theme
+
+        object Theme : IsNotADependency {
+            val core = DependencyNotation(group = group, name = "theme-core")
+            val preference = DependencyNotation(group = group, name = "theme-preference")
+        }
+
+        val component = module("component")
+        val core = module("core")
+        val layout = module("layout")
     }
 
     val uriParser = DependencyNotation(group = group, name = "uriparser")
@@ -55,5 +79,4 @@ object _1fexd : DependencyGroup(group = "com.github.1fexd") {
     val stringBuilder = DependencyNotation(group = group, name = "stringbuilder-util-kt")
     val embedResolve = DependencyNotation(group = group, name = "embed-resolve")
     val signify = DependencyNotation(group = group, name = "signifykt")
-
 }
