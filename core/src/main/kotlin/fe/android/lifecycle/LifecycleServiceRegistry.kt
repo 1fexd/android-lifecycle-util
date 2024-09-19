@@ -8,7 +8,7 @@ interface LifecycleServiceRegistry : DefaultLifecycleObserver {
 
     fun onAppInitialized()
 
-    fun register(service: LifecycleService)
+    fun register(service: LifecycleAwareService)
 
-    fun unregister(service: LifecycleService)
+    fun unregister(service: LifecycleAwareService)
 }

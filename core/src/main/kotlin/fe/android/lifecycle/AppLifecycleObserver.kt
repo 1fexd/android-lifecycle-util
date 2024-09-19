@@ -20,17 +20,17 @@ class AppLifecycleObserver(
         }
     }
 
-    private val services = mutableListOf<LifecycleService>()
+    private val services = mutableListOf<LifecycleAwareService>()
 
-    override fun register(service: LifecycleService) {
+    override fun register(service: LifecycleAwareService) {
         services.add(service)
     }
 
-    override fun unregister(service: LifecycleService) {
+    override fun unregister(service: LifecycleAwareService) {
         services.remove(service)
     }
 
-    private fun notifyServices(owner: LifecycleOwner, notify: suspend (LifecycleService) -> Unit) {
+    private fun notifyServices(owner: LifecycleOwner, notify: suspend (LifecycleAwareService) -> Unit) {
         owner.lifecycleScope.launch {
             services.forEach { notify(it) }
         }

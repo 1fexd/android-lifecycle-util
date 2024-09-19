@@ -2,7 +2,7 @@ package fe.android.lifecycle
 
 import androidx.lifecycle.LifecycleOwner
 
-interface LifecycleService {
+interface LifecycleAwareService {
     suspend fun onAppInitialized(owner: LifecycleOwner) {}
 
     suspend fun onCreate() {}
