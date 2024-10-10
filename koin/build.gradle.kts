@@ -1,7 +1,6 @@
-import de.fayard.refreshVersions.core.versionFor
-import fe.buildsrc.dependency.PinnedVersions
 import fe.buildsrc.Version
 import fe.buildsrc.publishing.PublicationComponent
+import fe.buildsrc.publishing.asProvider
 import fe.buildsrc.publishing.publish
 
 plugins {
@@ -43,6 +42,6 @@ android {
 publishing.publish(
     project,
     group.toString(),
-    versioning.info.tag ?: versioning.info.full,
+    versioning.asProvider(project),
     PublicationComponent.RELEASE
 )
