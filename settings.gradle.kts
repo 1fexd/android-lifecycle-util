@@ -1,5 +1,3 @@
-rootProject.name = "android-lifecycle-util"
-
 pluginManagement {
     repositories {
         google()
@@ -28,6 +26,7 @@ plugins {
     id("de.fayard.refreshVersions") version "0.60.5"
 }
 
+rootProject.name = "android-lifecycle-util"
 
 include(":core", ":koin")
 
