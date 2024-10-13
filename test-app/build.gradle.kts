@@ -41,9 +41,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-//        kotlinCompilerExtensionVersion = versionFor(AndroidX.compose.compiler)
-    }
 
     packaging {
         resources {
