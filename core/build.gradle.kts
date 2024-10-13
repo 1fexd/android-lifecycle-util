@@ -27,9 +27,6 @@ android {
     dependencies {
         implementation(AndroidX.lifecycle.runtime)
         implementation(AndroidX.lifecycle.common)
-//        implementation(platform(AndroidX.compose.bom))
-//        implementation(PinnedVersions.ComposeUi)
-//        implementation(PinnedVersions.Material3)
     }
 
     publishing {
